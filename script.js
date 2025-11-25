@@ -51,26 +51,25 @@ document.querySelectorAll('.project-card').forEach(card => {
 const contactForm = document.querySelector('.contact-form');
 
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
     
     // Basic validation
     if (!name || !email || !message) {
+        e.preventDefault();
         alert('Please fill in all fields');
         return;
     }
     
     if (!isValidEmail(email)) {
+        e.preventDefault();
         alert('Please enter a valid email address');
         return;
     }
     
-    // Simulate form submission
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
+    // Form will submit to Formspree
+    // Formspree will handle the email sending
 });
 
 function isValidEmail(email) {
