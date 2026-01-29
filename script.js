@@ -50,27 +50,72 @@ document.querySelectorAll('.project-card').forEach(card => {
 // Form Validation and Submission
 const contactForm = document.querySelector('.contact-form');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
+    const submitButton = contactForm.querySelector('.submit-button');
     
     // Basic validation
     if (!name || !email || !message) {
-        e.preventDefault();
-        alert('Please fill in all fields');
+        showMessage('Please fill in all fields', 'error');
         return;
     }
     
     if (!isValidEmail(email)) {
-        e.preventDefault();
-        alert('Please enter a valid email address');
+        showMessage('Please enter a valid email address', 'error');
         return;
     }
     
-    // Form will submit to Formspree
-    // Formspree will handle the email sending
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    
+    try {
+        // Submit to Formspree
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            showMessage('Thanks for your message! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        } else {
+            showMessage('Oops! There was a problem sending your message. Please try again.', 'error');
+        }
+    } catch (error) {
+        showMessage('Oops! There was a problem sending your message. Please try again.', 'error');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+    }
 });
+
+function showMessage(message, type) {
+    // Remove existing message if any
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create and show new message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message ${type}`;
+    messageDiv.textContent = message;
+    contactForm.appendChild(messageDiv);
+    
+    // Auto-remove message after 5 seconds
+    setTimeout(() => {
+        messageDiv.style.opacity = '0';
+        setTimeout(() => messageDiv.remove(), 300);
+    }, 5000);
+}
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
