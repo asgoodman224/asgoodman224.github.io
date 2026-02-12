@@ -35,7 +35,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -199,7 +199,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -373,7 +373,7 @@ nav {
 }
 
 /* Form Container */
-.contact-form {
+.contact .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -386,20 +386,22 @@ nav {
     box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.form-row {
+.contact .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
 /* Floating Label Groups */
-.form-group.floating {
+.contact .form-group.floating {
     position: relative;
 }
 
-.form-group.floating label {
+.contact .form-group.floating label {
     position: absolute;
     left: 1rem;
     top: 1rem;
@@ -414,14 +416,14 @@ nav {
     background: transparent;
 }
 
-.form-group.floating label svg {
+.contact .form-group.floating label svg {
     width: 18px;
     height: 18px;
     transition: all 0.3s ease;
 }
 
-.form-group.floating input,
-.form-group.floating textarea {
+.contact .form-group.floating input,
+.contact .form-group.floating textarea {
     width: 100%;
     padding: 1.25rem 1rem 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -431,19 +433,20 @@ nav {
     font-family: inherit;
     color: #fff;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.form-group.floating textarea {
+.contact .form-group.floating textarea {
     min-height: 150px;
     resize: vertical;
     padding-top: 1.5rem;
 }
 
 /* Focus and filled states */
-.form-group.floating input:focus,
-.form-group.floating textarea:focus,
-.form-group.floating input:not(:placeholder-shown),
-.form-group.floating textarea:not(:placeholder-shown) {
+.contact .form-group.floating input:focus,
+.contact .form-group.floating textarea:focus,
+.contact .form-group.floating input:not(:placeholder-shown),
+.contact .form-group.floating textarea:not(:placeholder-shown) {
     outline: none;
     border-color: #667eea;
     background: rgba(102, 126, 234, 0.1);
@@ -452,10 +455,10 @@ nav {
         0 4px 20px rgba(102, 126, 234, 0.2);
 }
 
-.form-group.floating input:focus + label,
-.form-group.floating textarea:focus + label,
-.form-group.floating input:not(:placeholder-shown) + label,
-.form-group.floating textarea:not(:placeholder-shown) + label {
+.contact .form-group.floating input:focus + label,
+.contact .form-group.floating textarea:focus + label,
+.contact .form-group.floating input:not(:placeholder-shown) + label,
+.contact .form-group.floating textarea:not(:placeholder-shown) + label {
     top: -0.5rem;
     left: 0.75rem;
     font-size: 0.8rem;
@@ -465,17 +468,17 @@ nav {
     border-radius: 4px;
 }
 
-.form-group.floating input:focus + label svg,
-.form-group.floating textarea:focus + label svg,
-.form-group.floating input:not(:placeholder-shown) + label svg,
-.form-group.floating textarea:not(:placeholder-shown) + label svg {
+.contact .form-group.floating input:focus + label svg,
+.contact .form-group.floating textarea:focus + label svg,
+.contact .form-group.floating input:not(:placeholder-shown) + label svg,
+.contact .form-group.floating textarea:not(:placeholder-shown) + label svg {
     width: 14px;
     height: 14px;
     stroke: #667eea;
 }
 
 /* Input highlight animation */
-.input-highlight {
+.contact .input-highlight {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -487,15 +490,15 @@ nav {
     border-radius: 2px;
 }
 
-.form-group.floating input:focus ~ .input-highlight,
-.form-group.floating textarea:focus ~ .input-highlight {
+.contact .form-group.floating input:focus ~ .input-highlight,
+.contact .form-group.floating textarea:focus ~ .input-highlight {
     width: calc(100% - 4px);
 }
 
 /* Submit Button */
-.submit-button {
+.contact .submit-button {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
@@ -510,15 +513,18 @@ nav {
     overflow: hidden;
     transition: all 0.3s ease;
     margin-top: 0.5rem;
+    align-self: flex-start;
+    width: auto;
+    max-width: 250px;
 }
 
-.submit-button .btn-text {
+.contact .submit-button .btn-text {
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
 }
 
-.submit-button .btn-icon {
+.contact .submit-button .btn-icon {
     position: relative;
     z-index: 1;
     display: flex;
@@ -526,14 +532,14 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.submit-button .btn-icon svg {
+.contact .submit-button .btn-icon svg {
     width: 20px;
     height: 20px;
     stroke: #fff;
     fill: none;
 }
 
-.submit-button .btn-bg {
+.contact .submit-button .btn-bg {
     position: absolute;
     top: 0;
     left: -100%;
@@ -543,26 +549,26 @@ nav {
     transition: left 0.4s ease;
 }
 
-.submit-button:hover {
+.contact .submit-button:hover {
     transform: translateY(-3px);
     box-shadow: 
         0 10px 30px rgba(102, 126, 234, 0.4),
         0 5px 15px rgba(118, 75, 162, 0.3);
 }
 
-.submit-button:hover .btn-bg {
+.contact .submit-button:hover .btn-bg {
     left: 0;
 }
 
-.submit-button:hover .btn-icon {
+.contact .submit-button:hover .btn-icon {
     transform: translateX(5px) rotate(15deg);
 }
 
-.submit-button:active {
+.contact .submit-button:active {
     transform: translateY(-1px);
 }
 
-.submit-button:disabled {
+.contact .submit-button:disabled {
     background: #4b5563;
     cursor: not-allowed;
     transform: none;
@@ -570,7 +576,7 @@ nav {
 }
 
 /* Form Message Styles */
-.form-message {
+.contact .form-message {
     margin-top: 1rem;
     padding: 1rem 1.5rem;
     border-radius: 12px;
@@ -582,13 +588,13 @@ nav {
     gap: 0.5rem;
 }
 
-.form-message.success {
+.contact .form-message.success {
     background: rgba(16, 185, 129, 0.2);
     color: #34d399;
     border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-.form-message.error {
+.contact .form-message.error {
     background: rgba(239, 68, 68, 0.2);
     color: #f87171;
     border: 1px solid rgba(239, 68, 68, 0.3);
@@ -600,15 +606,15 @@ nav {
         font-size: 2rem;
     }
     
-    .contact-title-line {
+    .contact .contact-title-line {
         width: 30px;
     }
     
-    .form-row {
+    .contact .form-row {
         grid-template-columns: 1fr;
     }
     
-    .contact-form {
+    .contact .contact-form {
         padding: 1.5rem;
     }
 }
@@ -716,7 +722,7 @@ footer {
 
 .react-projects-wrapper {
     position: relative;
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 0;
 }
