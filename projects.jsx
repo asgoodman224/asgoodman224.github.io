@@ -3,7 +3,7 @@ const projectsData = [
   {
     id: 1,
     title: "Sintax Platformer Game",
-    description: "Play from a handful of the Quinnipiac Computer Science professors in a 2D platformer game called \"Escape From Hell\". Created completely in Java.",
+    description: "A 2D platformer game called \"Escape From Hell\" where you play as Computer Science professors. Developed using agile methodology, featuring custom maps and a built-in map editor. Built entirely in Java.",
     image: "Images/Sintax.png",
     tags: ["Java", "Team Project", "Game Dev", "Software Development"],
     github: "https://github.com/asgoodman224/Sintax--Andrew-s-Copy",
@@ -12,7 +12,7 @@ const projectsData = [
   {
     id: 2,
     title: "Bobcat Brawlers",
-    description: "Fight against your friends in a Quinnipiac-themed multiplayer platformer game. Made completely in Java.",
+    description: "A Mortal Kombat/Super Smash Bros style platformer fighting game. Features six playable characters including professors and mascots, three university-themed maps, unique special attacks, falling projectiles, and powerups. Built entirely in Java.",
     image: "Images/Bobcat.png",
     tags: ["Java", "Game Development", "Team Project", "Software Development"],
     github: "https://github.com/asgoodman224/Bobcat-Brawlers",
@@ -25,6 +25,16 @@ const projectsData = [
     image: "Images/NFL.png",
     tags: ["Python", "API", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/asgoodman224/NFL-Predictor",
+    inProgress: true,
+    featured: true
+  },
+  {
+    id: 4,
+    title: "Microservices Cluster",
+    description: "A distributed networking system where clients submit computational tasks to a dynamic pool of service nodes. Features TCP/UDP communication, multi-threaded architecture, and fault tolerance with services including Base64 encoding, image transformation, CSV statistics, GZIP compression, and file entropy analysis.",
+    image: "Images/AWS.png",
+    tags: ["Java", "Distributed Systems", "TCP/UDP", "Multi-threading", "Microservices", "Fault Tolerance"],
+    github: "",
     inProgress: true,
     featured: true
   }
@@ -86,7 +96,7 @@ const ProjectCard = ({ project, index, isVisible }) => {
               <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
-              Featured
+              Completed
             </div>
           )}
         </div>
