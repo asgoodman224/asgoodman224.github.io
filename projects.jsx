@@ -33,9 +33,9 @@ const projectsData = [
     title: "Microservices Cluster",
     description: "A distributed networking system where clients submit computational tasks to a dynamic pool of service nodes. Features TCP/UDP communication, multi-threaded architecture, and fault tolerance with services including Base64 encoding, image transformation, CSV statistics, GZIP compression, and file entropy analysis.",
     image: "Images/AWS.png",
-    tags: ["Java", "Distributed Systems", "TCP/UDP", "Multi-threading", "Microservices", "Fault Tolerance"],
-    github: "",
-    inProgress: true,
+    tags: ["AWS", "Java", "Distributed Systems", "TCP/UDP", "Multi-threading", "Microservices", "Fault Tolerance"],
+    github: "https://github.com/asgoodman224/QU-Microservices-Cluster.git",
+    inProgress: false,
     featured: true
   }
 ];
