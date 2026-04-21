@@ -44,7 +44,7 @@ const projectsData = [
     description: "Designed and implemented the shared application layer protocol governing client-server communication for a real-time multiplayer game. Defined message formats for player actions, game state updates, scoring, and events. Integrated protocol with UDP for low-latency actions and TCP for reliable state synchronization. Built logic for ordering, queuing, and processing concurrent player actions within a fixed-rate server game loop to ensure fairness, while accounting for packet loss, duplication, and out-of-order delivery.",
     image: "Images/ChronoArena.png",
     tags: ["Java", "Networking", "TCP/UDP", "Multiplayer", "Game Dev", "Protocol Design"],
-    github: "",
+    github: "https://github.com/Onsareorucho/Chrono-Arena",
     inProgress: false,
     featured: true
   }
