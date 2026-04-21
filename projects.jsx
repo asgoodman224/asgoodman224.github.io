@@ -21,7 +21,7 @@ const projectsData = [
   {
     id: 3,
     title: "NFL + NBA Predictor Website",
-    description: "A machine learning-powered NFL game predictor that analyzes team statistics and historical data to forecast game outcomes using API integration and predictive algorithms.",
+    description: "A machine learning-powered sports predictor for both NFL and NBA matchups. Create custom games by pulling real team stats and historical data from any point in time and pitting any two teams against each other — regardless of era. Features a live mode that uses current season data to predict real upcoming matchups in real time.",
     image: "Images/NFL.png",
     tags: ["Python", "API", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/asgoodman224/NFL-Predictor",
