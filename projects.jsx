@@ -20,7 +20,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "NFL Predictor Website",
+    title: "NFL + NBA Predictor Website",
     description: "A machine learning-powered NFL game predictor that analyzes team statistics and historical data to forecast game outcomes using API integration and predictive algorithms.",
     image: "Images/NFL.png",
     tags: ["Python", "API", "HTML", "CSS", "JavaScript"],
@@ -34,7 +34,17 @@ const projectsData = [
     description: "A distributed networking system where clients submit computational tasks to a dynamic pool of service nodes. Features TCP/UDP communication, multi-threaded architecture, and fault tolerance with services including Base64 encoding, image transformation, CSV statistics, GZIP compression, and file entropy analysis.",
     image: "Images/AWS.png",
     tags: ["AWS", "Java", "Distributed Systems", "TCP/UDP", "Multi-threading", "Microservices", "Fault Tolerance"],
-    github: "https://github.com/asgoodman224/QU-Microservices-Cluster.git",
+    github: "https://github.com/asgoodman224/QU-Microservices-Cluster",
+    inProgress: false,
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Chrono Arena",
+    description: "Designed and implemented the shared application layer protocol governing client-server communication for a real-time multiplayer game. Defined message formats for player actions, game state updates, scoring, and events. Integrated protocol with UDP for low-latency actions and TCP for reliable state synchronization. Built logic for ordering, queuing, and processing concurrent player actions within a fixed-rate server game loop to ensure fairness, while accounting for packet loss, duplication, and out-of-order delivery.",
+    image: "Images/ChronoArena.png",
+    tags: ["Java", "Networking", "TCP/UDP", "Multiplayer", "Game Dev", "Protocol Design"],
+    github: "",
     inProgress: false,
     featured: true
   }
