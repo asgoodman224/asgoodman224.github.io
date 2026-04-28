@@ -1010,7 +1010,22 @@ footer {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.react-project-card:hover .card-image-wrapper img {
+.card-image-duo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.card-image-duo img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.react-project-card:hover .card-image-wrapper img,
+.react-project-card:hover .card-image-duo img {
     transform: scale(1.1);
 }
 

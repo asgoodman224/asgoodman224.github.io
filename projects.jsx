@@ -20,9 +20,10 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "NFL + NBA Predictor Website",
+    title: "Sports Predictor Website",
     description: "A machine learning-powered sports predictor for both NFL and NBA matchups. Create custom games by pulling real team stats and historical data from any point in time and pitting any two teams against each other — regardless of era. Features a live mode that uses current season data to predict real upcoming matchups in real time.",
-    image: "Images/NFL.png",
+    image: "Images/NBA.png",
+    image2: "Images/NFL.png",
     tags: ["Python", "API", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/asgoodman224/NFL-Predictor",
     live: "https://nfl-nba-predictor.onrender.com/",
@@ -92,7 +93,14 @@ const ProjectCard = ({ project, index, isVisible }) => {
       <div className="card-glow"></div>
       <div className="card-inner">
         <div className="card-image-wrapper">
-          <img src={project.image} alt={project.title} />
+          {project.image2 ? (
+            <div className="card-image-duo">
+              <img src={project.image} alt={project.title} />
+              <img src={project.image2} alt={project.title} />
+            </div>
+          ) : (
+            <img src={project.image} alt={project.title} />
+          )}
           <div className="image-overlay">
             <span className="view-project">View Details</span>
           </div>
